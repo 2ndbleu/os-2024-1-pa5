@@ -142,7 +142,7 @@ We provide you with a sample FATty file system image, `fs.img-fatty`, in the ske
 
 ### 3. Implement the `sync()` system call (10 points)
 
-The final task is to implement the `sync()` system call. The system call number of `sync()` is already assigned to 22 in the `./kernel/syscall.h` file. When a file or directory is created, deleted, or updated, the associated inode blocks and data blocks are written into the disk immediately, with the help of the Logging Layer (see Chap. 8.4 of the [xv6 book](http://csl.snu.ac.kr/courses/4190.307/2024-1/book-riscv-rev3.pdf)). However, for the superblock and FAT blocks, we chose to update only their in-memory versions of them to improve overall performance. The role of the `sync()` system call is to write the contents of the superblock and FAT blocks to the disk to make them persistent. You don't need to care about sudden power failures during the `sync()` system call. 
+The final task is to implement the `sync()` system call. The system call number of `sync()` is already assigned to 22 in the `./kernel/syscall.h` file. When a file or directory is created, deleted, or updated, the associated inode blocks and data blocks are written into the disk immediately, with the help of the Logging Layer (see Chap. 8.4 of the [xv6 book](http://csl.snu.ac.kr/courses/4190.307/2024-1/book-riscv-rev3.pdf)). However, for the superblock and FAT blocks, we chose to update only their in-memory versions to improve overall performance. The role of the `sync()` system call is to write the contents of the superblock and FAT blocks to the disk to make them persistent. You don't need to care about sudden power failures during the `sync()` system call. 
 
 __SYNOPSYS__
 ```
